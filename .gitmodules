@@ -1,3 +1,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto
+[submodule ".config/nvim/bundles/dein"]
+	path = .config/nvim/bundles/dein
+	url = https://github.com/Shougo/dein.vim
