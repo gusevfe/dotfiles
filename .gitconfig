@@ -1,3 +1,25 @@
 [user]
-user = Fedor Gusev
-email = gusevfe@gmail.com
+	name = Fedor Gusev
+	email = gusevfe@gmail.com
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	permission-reset = "!git diff -p | grep -E \"^(diff|old mode|new mode)\" | sed -e \"s/^old/NEW/;s/^new/old/;s/^NEW/new/\" | git apply"
+[push]
+	default = current
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+[credential]
+	helper = cache --timeout=3600
+[mergetool]
+  prompt = true
+	path = nvim
+[merge]
+  tool = fugitive
+
+[mergetool "fugitive"]
+  cmd = nvim "+Gvdiff" $MERGED
+[diff]
+	algorithm = patience
