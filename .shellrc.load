@@ -6,4 +6,5 @@ export PATH=$PATH:$HOME/bin
 # . $HOME/.shellrc.load
 
 ####
-# put any bash/zsh customizations in here
+
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
