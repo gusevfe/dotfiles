@@ -14,7 +14,6 @@ if dein#load_state('/home/gusev/.config/nvim/bundles')
   call dein#add('/home/gusev/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('tpope/vim-fugitive')
@@ -115,8 +114,14 @@ endif
 let g:deoplete#enable_at_startup = 1
 
 " Next & prev in autocomplete
-imap <C-n>     <Plug>(neosnippet_expand_or_jump)
-smap <C-n>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-n>     <Plug>(neosnippet_expand_target)
-noremap <C-e> <C-n>|
-noremap <C-u> <C-p>|
+
+imap <expr><M-i>  
+  \ neosnippet#expandable_or_jumpable() ?
+  \    "\<Plug>(neosnippet_expand_or_jump)":
+  \    pumvisible() ? "\<C-y>" : "\<M-i>"
+
+" imap <C-n>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-n>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-n>     <Plug>(neosnippet_expand_target)
+" noremap <C-e> <C-n>|
+" noremap <C-u> <C-p>|

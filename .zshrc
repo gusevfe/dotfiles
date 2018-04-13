@@ -22,3 +22,6 @@ bindkey "^l" backward-delete-word
 bindkey "^y" delete-word
 bindkey "^j" backward-kill-line
 bindkey "^;" kill-line
+
+export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+export GEM_HOME=$HOME/.gem
