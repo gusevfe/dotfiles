@@ -4,3 +4,6 @@
 [submodule ".config/nvim/bundles/dein"]
 	path = .config/nvim/bundles/dein
 	url = https://github.com/Shougo/dein.vim
+[submodule "zsh-ssh-agent"]
+	path = zsh-ssh-agent
+	url = http://github.com/bobsoppe/zsh-ssh-agent

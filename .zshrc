@@ -24,4 +24,5 @@ bindkey "^j" backward-kill-line
 bindkey "^;" kill-line
 
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-export GEM_HOME=$HOME/.gem
+unalias rsync
+source $HOME/.zprezto/modules/zsh-ssh-agent/ssh-agent.zsh
