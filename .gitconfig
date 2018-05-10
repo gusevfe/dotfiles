@@ -23,3 +23,5 @@
   cmd = nvim "+Gvdiff" $MERGED
 [diff]
 	algorithm = patience
+[core]
+	editor = nvim
