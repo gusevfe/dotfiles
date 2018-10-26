@@ -327,29 +327,29 @@ if has('nvim')
   " nnoremap <F2>i <C-w>l|xnoremap <F2>i <C-w>l|tnoremap <F2>i <C-\><C-n><C-w>l|
   " nnoremap <F2>h <C-w>s|xnoremap <F2>h <C-w>s|tnoremap <F2>h <C-\><C-n><C-w>s|
 
-  nnoremap <F2>c <C-w>s|xnoremap <F2>c <C-w>s|tnoremap <F2>c <C-\><C-n><C-w>s|
-  nnoremap <F2>C <C-w>v|xnoremap <F2>C <C-w>v|tnoremap <F2>C <C-\><C-n><C-w>v|
-  nnoremap <F2>t <C-w>s:terminal<CR>|xnoremap <F2>t <C-w>s:terminal<CR>|tnoremap <F2>t <C-\><C-n><C-w>s:terminal<CR>|
-  nnoremap <F2>T <C-w>v:terminal<CR>|xnoremap <F2>T <C-w>v:terminal<CR>|tnoremap <F2>T <C-\><C-n><C-w>v:terminal<CR>|
-  nnoremap <F2>e <C-w>j|xnoremap <F2>e <C-w>j|tnoremap <F2>e <C-\><C-n><C-w>j|
-  nnoremap <F2>u <C-w>k|xnoremap <F2>u <C-w>k|tnoremap <F2>u <C-\><C-n><C-w>k|
-  nnoremap <F2>n <C-w>h|xnoremap <F2>n <C-w>h|tnoremap <F2>n <C-\><C-n><C-w>h|
-  nnoremap <F2>i <C-w>l|xnoremap <F2>i <C-w>l|tnoremap <F2>i <C-\><C-n><C-w>l|
-  nnoremap <F2>= <C-w>=|xnoremap <F2>= <C-w>=|tnoremap <F2>= <C-\><C-n><C-w>=|
-  tnoremap <F2>[ <C-\><C-n>
+  " nnoremap <F2>c <C-w>s|xnoremap <F2>c <C-w>s|tnoremap <F2>c <C-\><C-n><C-w>s|
+  " nnoremap <F2>C <C-w>v|xnoremap <F2>C <C-w>v|tnoremap <F2>C <C-\><C-n><C-w>v|
+  " nnoremap <F2>t <C-w>s:terminal<CR>|xnoremap <F2>t <C-w>s:terminal<CR>|tnoremap <F2>t <C-\><C-n><C-w>s:terminal<CR>|
+  " nnoremap <F2>T <C-w>v:terminal<CR>|xnoremap <F2>T <C-w>v:terminal<CR>|tnoremap <F2>T <C-\><C-n><C-w>v:terminal<CR>|
+  " nnoremap <F2>e <C-w>j|xnoremap <F2>e <C-w>j|tnoremap <F2>e <C-\><C-n><C-w>j|
+  " nnoremap <F2>u <C-w>k|xnoremap <F2>u <C-w>k|tnoremap <F2>u <C-\><C-n><C-w>k|
+  " nnoremap <F2>n <C-w>h|xnoremap <F2>n <C-w>h|tnoremap <F2>n <C-\><C-n><C-w>h|
+  " nnoremap <F2>i <C-w>l|xnoremap <F2>i <C-w>l|tnoremap <F2>i <C-\><C-n><C-w>l|
+  " nnoremap <F2>= <C-w>=|xnoremap <F2>= <C-w>=|tnoremap <F2>= <C-\><C-n><C-w>=|
+  " tnoremap <F2>[ <C-\><C-n>
 
-  nnoremap <F2>q <C-w>q|xnoremap <F2>q <C-w>q|tnoremap <F2>q <C-\><C-n><C-w>q|
-  tnoremap <F2><F2> <C-\><C-n>
+  " nnoremap <F2>q <C-w>q|xnoremap <F2>q <C-w>q|tnoremap <F2>q <C-\><C-n><C-w>q|
+  " tnoremap <F2><F2> <C-\><C-n>
 else 
   " Window handling: <C-w> is now <C-r>
-  nnoremap <C-r> <C-w>|xnoremap <C-r> <C-w>|
+  " nnoremap <C-r> <C-w>|xnoremap <C-r> <C-w>|
   " <C-r><C-r> opens a new window
-  nnoremap <C-r><C-r> <C-w>n|xnoremap <C-r><C-r> <C-w>n|
-  nnoremap <C-r>n <C-w>h|xnoremap <C-r>n <C-w>h|
-  nnoremap <C-r>u <C-w>k|xnoremap <C-r>u <C-w>k|
-  nnoremap <C-r>e <C-w>j|xnoremap <C-r>e <C-w>j|
-  nnoremap <C-r>i <C-w>l|xnoremap <C-r>i <C-w>l|
-  nnoremap <C-r>h <C-w>s|xnoremap <C-r>h <C-w>s|
+  " nnoremap <C-r><C-r> <C-w>n|xnoremap <C-r><C-r> <C-w>n|
+  " nnoremap <C-r>n <C-w>h|xnoremap <C-r>n <C-w>h|
+  " nnoremap <C-r>u <C-w>k|xnoremap <C-r>u <C-w>k|
+  " nnoremap <C-r>e <C-w>j|xnoremap <C-r>e <C-w>j|
+  " nnoremap <C-r>i <C-w>l|xnoremap <C-r>i <C-w>l|
+  " nnoremap <C-r>h <C-w>s|xnoremap <C-r>h <C-w>s|
 endif
 
 nnoremap <Space> i<Space><Esc><Right>|

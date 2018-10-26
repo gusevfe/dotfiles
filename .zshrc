@@ -26,3 +26,6 @@ bindkey "^;" kill-line
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 unalias rsync
 source $HOME/.zprezto/modules/zsh-ssh-agent/ssh-agent.zsh
+source /etc/profile.d/rvm.sh
+
+zstyle ':prezto:module:prompt' theme 'off'

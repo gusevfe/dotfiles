@@ -15,7 +15,9 @@ if dein#load_state('/home/gusev/.config/nvim/bundles')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/neomru')
   call dein#add('tpope/vim-fugitive')
   call dein#add('scrooloose/nerdcommenter')
   call dein#add('bling/vim-airline')
@@ -23,6 +25,12 @@ if dein#load_state('/home/gusev/.config/nvim/bundles')
   call dein#add('rafaqz/citation.vim')
   call dein#add('vim-scripts/DoxygenToolkit.vim')
   call dein#add('icymind/NeoSolarized')
+  call dein#add('morhetz/gruvbox')
+  call dein#add('JuliaEditorSupport/julia-vim')
+  call dein#add('christoomey/vim-tmux-navigator')
+  call dein#add('sakhnik/nvim-gdb')
+  call dein#add('JoZie/denite-make')
+  call dein#add('dag/vim-fish')
   " Required:
   call dein#end()
   call dein#save_state()
@@ -43,8 +51,8 @@ let mapleader=","
 source $HOME/.config/nvim/colemak.vim
 
 syntax enable
-set background=dark
-colorscheme NeoSolarized
+set background=light
+colorscheme gruvbox
 
 " set clipboard=autoselect,exclude:.* 
 noremap <silent> ,q :<C-u>confirm quit<CR>
@@ -71,7 +79,7 @@ nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 inoremap <Tab> <Esc>`^
-inoremap <Leader><Tab> <Tab>
+tnoremap <Esc> <C-\><C-n>
 
 let g:fugitive_no_maps=1
 
@@ -125,3 +133,28 @@ imap <expr><M-i>
 " xmap <C-n>     <Plug>(neosnippet_expand_target)
 " noremap <C-e> <C-n>|
 " noremap <C-u> <C-p>|
+
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <F2>n :TmuxNavigateLeft<cr>
+nnoremap <silent> <F2>e :TmuxNavigateDown<cr>
+nnoremap <silent> <F2>u :TmuxNavigateUp<cr>
+nnoremap <silent> <F2>i :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
+call denite#custom#map('insert', '<M-e>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<M-u>', '<denite:move_to_previous_line>', 'noremap')
+
+call denite#custom#map('insert', '<Tab>', '<denite:quit>', 'noremap')
+
+call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+call denite#custom#var('file/rec/git', 'command',
+  \ ['git', 'ls-files', '-co', '--exclude-standard'])
+
+nnoremap <silent> <Space>b :Denite buffer<CR>
+nnoremap <silent> <Space>g :Denite file/rec/git<CR>
+nnoremap <silent> <Space>G :DeniteProjectDir file/rec/git<CR>
+nnoremap <silent> <Space>a :DeniteProjectDir grep<CR>
+nnoremap <silent> <Space>A :DeniteProjectDir grep<CR>
+
+call denite#custom#source(
+  \ 'file/rec', 'matchers', ['matcher/substring'])
